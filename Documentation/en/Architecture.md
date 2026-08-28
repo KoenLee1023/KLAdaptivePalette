@@ -1,0 +1,3 @@
+# Architecture
+
+Before scanning pixels, the analyzer rasterizes the source within the dimension and pixel limits in `KLPaletteAnalysisConfiguration`. Source crop coordinates are mapped into the bounded raster. The source aspect ratio is preserved unless an extreme ratio cannot fit the pixel cap with both dimensions present. The analyzer excludes alpha at or below 0.5, ranks visible colors with a perceptual histogram, and selects contrast from measured luminance. Flat edges keep their representative raster color. Textured neutral and chromatic edges select a clean raster color from the same color family.
